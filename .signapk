@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+#export LD_LIBRARY_PATH=/data/data/per.pqy.apktool/apktool/lix
+#in some targets,LD_PRELOAD will cause a error.
+export LD_PRELOAD=
+export LD_LIBRARY_PATH=/data/data/com.termux/files/home/Tmux-Bunch/.bunch/openjdk/lib/arm:/data/data/com.termux/files/home/Tmux-Bunch/.bunch/openjdk/lib/arm/jli:$LD_LIBRARY_PATH
+umask 000
+cd $HOME/Tmux-Bunch/.bunch
+#echo $$ > pid
+/data/data/com.termux/files/home/Tmux-Bunch/.bunch/openjdk/bin/java -Xmx1024m -jar /data/data/com.termux/files/home/Tmux-Bunch/.bunch/signapk.jar /data/data/com.termux/files/home/Tmux-Bunch/.bunch/publickey.x509.pem /data/data/com.termux/files/home/Tmux-Bunch/.bunch/publickey.pk8 "$@" 
+
