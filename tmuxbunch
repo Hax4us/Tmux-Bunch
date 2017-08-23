@@ -3,10 +3,12 @@ dir=`pwd`
 subs="which file ? Enter number of choice or 'x' to exit"
 esit="are you sure ? press ENTER to exit"
 return="ENTER to return to TMUX-BUNCH menu"
-
+DIRECTORY="/data/data/com.termux/files/usr/share/figlet"
 TMP="Hax4Us(devil) Tmux-Bunch is a first tool for complete apk modding in TERMUX."
 VERSION="VERSION 1.1"
+if [ ! -d "$DIRECTORY" ]; then
 apt update && apt install figlet
+fi
 figlet -f mini ..........TMUX-BUNCH..........
 echo
 echo
@@ -16,22 +18,22 @@ echo $TMP
 echo
 echo $VERSION
 echo
-echo "--------Hax4Us-----DeViL-----Don't----CopY--------"
+echo "   --------Hax4Us-----DeViL-----Don't----CopY--------"
 echo
 echo "WARNING :- Don't Try To Reupload , Modify , Or Resell Otherwise I Will Report You"
 echo
 echo "You Can Reuse Or Give My Tool To Anyone or users But You Will Have To Take Permission From Me"
 echo
-echo "-------------- LICENSE--INCLUDED------------------"
+echo "   -------------- LICENSE--INCLUDED----------------"
 echo
-echo "       ~~~~~~~~~~~TMUX---BUNCH~~~~~~~~~~~"
+echo "          ~~~~~~~~~~~TMUX---BUNCH~~~~~~~~~~~"
 echo
 echo "                     APK MODDING          "
 echo "-----------------------------------------------------"
 echo
 echo
-echo "----------------------DeViL-----------------------"
-echo "---------------------------------------------------"
+echo "  ----------------------DeViL-----------------------"
+echo "-------------------------------------------------------"
 echo "$TMP"
 echo
 echo "$VERSION"
@@ -177,6 +179,7 @@ echo "$esit"
 read d
 exit
 else
+echo "signing apk ......."
 OUTPUT=`ls | sed -n $choice'p'`
 sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$OUTPUT $dir/sign/signed_$OUTPUT
 echo
@@ -251,5 +254,7 @@ echo "1)Openjdk Creators"
 echo "2)Apktool Creator(ibotpeaches)"
 echo "3)Great Tools (signapk , zipalign , apktool , openjdk)"
 echo "4)DeViL(Hax4Us) --- Collector/Script-Creator"
+;;
+8) exit
 ;;
 esac
