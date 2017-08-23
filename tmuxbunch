@@ -47,7 +47,8 @@ echo "3)Recompile"
 echo "4)Sign apk-important for installing"
 echo "5)Zipalign"
 echo "6)About"
-echo "7)Exit"
+echo "7)Credits"
+echo "8)Exit"
 echo
 echo "______________________"
 echo
@@ -110,7 +111,7 @@ sh $dir/.apktool d $dir/decompiler/$OUTPUT -o $dir/recompiler/$OUTPUT
 echo
 echo
 echo
-echo "_____________________"
+echo "________________________________________"
 echo
 echo "Decompiled files in 'recompiler' folder. You can now play with apk source code"
 echo "$return"
@@ -141,13 +142,14 @@ read p
 exit
 else
 OUTPUT=`ls | sed -n $choice'p'`
-sh $dir/.apktool b $HOME/Tmux-Bunch/
+sh $dir/.apktool b --aapt $dir/.bunch/openjdk/bin/aapt $dir/recompiler/$OUTPUT -o $dir/unsign/$OUTPUT
 echo
 echo
 echo
-echo "_________________________"
+echo "________________________________________"
 echo
 echo "recompiled apk in 'unsign' folder. Sign apk before installing"
+echo
 echo "$return"
 read a
 fi
@@ -180,9 +182,10 @@ sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$OUTPUT $dir/sign/
 echo
 echo
 echo
-echo "________________________"
+echo "_______________________________________"
 echo
 echo "signed apk in 'sign' folder"
+echo
 echo "$return"
 read lokesh
 fi
@@ -211,9 +214,10 @@ sh $dir/.zzipalign 4 $dir/zipalign/$OUTPUT $dir/zipaligned_$OUTPUT
 echo
 echo
 echo
-echo "_________________________"
+echo "________________________________________"
 echo
 echo "zipaligned apk in 'zipalign' folder"
+echo
 echo "$return"
 read devil
 fi
@@ -224,8 +228,8 @@ cd $dir
 6) echo
 echo
 echo
-echo "                             About"
-echo "        --------------------------------------------------"
+echo "                         About"
+echo "     ----------------------------------------------"
 echo
 echo "I am trying to do with this tool is provide a user friendly program for noobs so they can play with apks before they really understand the process.This tool is also useful for experienced users that don't want to type the same command again and again."
 echo
@@ -233,11 +237,19 @@ echo "ENTER to continue"
 read continue
 echo
 echo
-echo "------Creator Of This Script Or Tool ::---->> DeViL-----"
+echo "------Creator Of This Script Or Tool ::---->> DeViL----"
 echo
 figlet -f mini ..........TMUX--BUNCH..........
 echo
 echo
-echo "        ~~~~~~~TMUX---BUNCH~~~~~~~~" ;;
-esac
+echo "            ~~~~~~~TMUX---BUNCH~~~~~~~~"
+;;
 
+7) echo "       -----------Credits Goes To------------"
+echo
+echo "1)Openjdk Creators"
+echo "2)Apktool Creator(ibotpeaches)"
+echo "3)Great Tools (signapk , zipalign , apktool , openjdk)"
+echo "4)DeViL(Hax4Us) --- Collector/Script-Creator"
+;;
+esac
