@@ -6,6 +6,8 @@ Using this ....You can use apktool in termux 100% working &amp; personally teste
 
 2.chmod 777 $HOME/Tmux-Bunch/.lib/libld.so
 
+4.chmod 777 $HOME/Tmux-Bunch/.bunch/openjdk/bin/java
+
 3.çd Tmux-Bunch
 
 4.chmod +x tmuxbunch
