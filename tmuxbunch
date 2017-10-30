@@ -5,7 +5,7 @@ esit="are you sure ? press ENTER to exit"
 return="ENTER to return to TMUX-BUNCH menu"
 DIRECTORY="/data/data/com.termux/files/usr/share/figlet"
 TMP="Hax4Us(devil) Tmux-Bunch is a first tool for complete apk modding in TERMUX."
-VERSION="VERSION 1.1"
+VERSION="VERSION 2.0"
 if [ ! -d "$DIRECTORY" ]; then
 apt update && apt install figlet
 fi
