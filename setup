@@ -1,0 +1,6 @@
+#!/data/data/com.termux/files/usr/bin/bash
+curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
+rm $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
+mv $HOME/Tmux-Bunch/apk.rb $HOME/metasploit-framework/lib/msf/core/payload
+echo
+echo "[*] Now you can run tmuxbunch v2.0 --deViL---"
