@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+dir=$HOME/Tmux-Bunch
+ln -s $dir/.apktool $PREFIX/bin/apktool
+curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
+rm $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
+mv $dir/apk.rb $HOME/metasploit-framework/lib/msf/core/payload
+clear
+echo "Setting up Tmux-Bunch for you"
+echo
+chmod 777 $dir/.lib/libld.so
+chmod +x $dir/.apktool
+chmod +x $dir/tmuxbunch
+chmod +x $dir/.signapk
+chmod 777 $dir/.bunch/openjdk/bin/java
+mkdir $dir/embout
+clear
+echo "DONE"
+sleep 2
+echo "[*] Now you can run tmuxbunch v2.1 --deViL---"
