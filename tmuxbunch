@@ -264,6 +264,7 @@ cd $HOME/metasploit-framework
 echo "signing apk ......."
 mv $dir/unsign/output.apk $dir/unsign/$output12.apk
 sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$output12.apk $dir/embout/$output12.apk
+rm $dir/unsign/$output12.apk
 fi
 echo
 echo "We will met again :D , have a payload day..!"
