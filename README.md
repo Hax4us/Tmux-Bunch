@@ -1,5 +1,11 @@
-# TMUX-BUNCH v2.0 now replace with Tmux-Bunch v2.1
+# TMUX-BUNCH v2.1 now replace with Tmux-Bunch v2.2
 Using this ....You can play with apks source codes and also you can bind payloads with any apk.
+
+# Changes in v2.2
+
+1.Fix ld.so error
+
+2.Update Apktool from 2.2.0 to 2.2.2
 
 # Some changes in v2.1
 
@@ -11,7 +17,7 @@ Using this ....You can play with apks source codes and also you can bind payload
 
 4.No need to sign your apk.
 .
-# Some More Instructions for Tmux-Bunch v2.1 , if you want to also enjoy new feature of payload binding with any apk so do these steps :-
+# Some More Instructions for Tmux-Bunch v2.2 , if you want to also enjoy new feature of payload binding with any apk so do these steps :-
 
 1.Goto tmux-bunch folder
 
