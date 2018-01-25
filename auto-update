@@ -1,6 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/bash
-cd $HOME
-rm -rf $HOME/Tmux-Bunch
-apt install git
-git clone https://github.com/Hax4us/Tmux-Bunch.git
-echo -e "\033[1;31m Updated Successfully \033[0m"
