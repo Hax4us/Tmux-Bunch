@@ -2,5 +2,5 @@
 export LD_LIBRARY_PATH=$HOME/Tmux-Bunch/.bunch/openjdk/lib/arm:$LD_LIBRARY_PATH
 umask 000
 cd $HOME/Tmux-Bunch/.bunch
-exec $HOME/Tmux-Bunch/.bunch/openjdk/bin/java -Xmx1024m -Djava.io.tmpdir=$HOME/Tmux-Bunch -jar $HOME/Tmux-Bunch/.bunch/apktool-2.2.0.jar -p $HOME/Tmux-Bunch "$@"
+exec $HOME/Tmux-Bunch/.bunch/openjdk/bin/java -Xmx1024m -Djava.io.tmpdir=$HOME/Tmux-Bunch -jar $HOME/Tmux-Bunch/.bunch/apktool-2.2.2.jar -p $HOME/Tmux-Bunch "$@"
 
