@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "\033[1;33m Updating ..."
+echo
+git pull > /dev/null
+echo -e "\033[1;31m Updated Successfully \033[0m"
