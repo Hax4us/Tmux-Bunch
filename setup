@@ -17,10 +17,15 @@ chmod +x $dir/.apktool
 chmod +x $dir/tmuxbunch
 chmod +x $dir/.signapk
 chmod 777 $dir/.bunch/openjdk/bin/java
+if [ ! -d $dir/embout ]
+	then
 mkdir $dir/embout
+fi
+if [ ! -d $dir/shell ]
+	then
 mkdir $dir/shell
+fi
 if [ -d $dir/binder ]; then
-else
 	mkdir $dir/binder
 	fi
 	if [ -L $PREFIX/bin/tmuxbunch ]
