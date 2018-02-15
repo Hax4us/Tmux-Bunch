@@ -4,6 +4,7 @@ Using this ....You can play with apks source codes and also you can bind payload
 # Changes in v2.3
 
 1.Add persistence backdoor script
+
 2.Autochecking for binder folder if not exist so tool will create 
 
 # Changes in v2.2
@@ -12,7 +13,7 @@ Using this ....You can play with apks source codes and also you can bind payload
 
 2.Update Apktool from 2.2.0 to 2.2.2
 
-# Some changes in v2.1
+# Changes in v2.1
 
 1.Improve stability.
 
