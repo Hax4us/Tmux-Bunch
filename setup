@@ -1,9 +1,14 @@
 #!/data/data/com.termux/files/usr/bin/bash
 dir=$HOME/Tmux-Bunch
 ln -s $dir/.apktool $PREFIX/bin/apktool
+if [ -f $PREFIX/bin/curl ] ; then
 curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
+else
+	apt install curl
+curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
+fi
 rm $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
-mv $dir/apk.rb $HOME/metasploit-framework/lib/msf/core/payload
+mv $dir/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/
 clear
 echo "Setting up Tmux-Bunch for you ..."
 echo
@@ -13,8 +18,17 @@ chmod +x $dir/tmuxbunch
 chmod +x $dir/.signapk
 chmod 777 $dir/.bunch/openjdk/bin/java
 mkdir $dir/embout
+mkdir $dir/shell
+if [ -d $dir/binder ]; then
+else
+	mkdir $dir/binder
+	fi
+	if [ -L $PREFIX/bin/tmuxbunch ]
+		then
+			rm $PREFIX/bin/tmuxbunch
+			fi
 ln -s $dir/tmuxbunch $PREFIX/bin/
 echo
 echo "DONE"
 sleep 1
-echo "[*] Now you can run tmuxbunch v2.2 --deViL---"
+echo "[*] Now you can run tmuxbunch v2.3 --Hax4Us---"
