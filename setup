@@ -1,16 +1,28 @@
 #!/data/data/com.termux/files/usr/bin/bash
+if [ -d $HOME/Tmux-Bunch ]
+	then
 dir=$HOME/Tmux-Bunch
+else
+	echo -e "\033[1;31m You'd cloned in wrong directory please again clone in home directory \033[0m"
+	exit
+	fi
 ln -s $dir/.apktool $PREFIX/bin/apktool
 if [ -f $PREFIX/bin/curl ] ; then
 curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
 else
-	apt install curl
+	apt install curl -y
 curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
 fi
+if [ -d $HOME/metasploit-framework ]
+	then
 rm $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
 mv $dir/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/
-clear
-echo "Setting up Tmux-Bunch for you ..."
+else
+	echo -e "\033[1;31m Metasploit cant be found please install metasploit from my official script \033[0m"
+	exit
+	fi
+echo
+echo -e "\033[1;32m Setting up Tmux-Bunch for you ..."
 echo
 chmod 777 $dir/.lib/libld.so
 chmod +x $dir/.apktool
@@ -25,15 +37,30 @@ if [ ! -d $dir/shell ]
 	then
 mkdir $dir/shell
 fi
-if [ -d $dir/binder ]; then
+if [ ! -d $dir/binder ]; then
 	mkdir $dir/binder
 	fi
-	if [ -L $PREFIX/bin/tmuxbunch ]
+	if [ -f $PREFIX/bin/tmuxbunch ]
 		then
 			rm $PREFIX/bin/tmuxbunch
 			fi
-ln -s $dir/tmuxbunch $PREFIX/bin/
+#ln -s $dir/tmuxbunch $PREFIX/bin/
+wrapperscript() {
+	cat > $PREFIX/bin/tmuxbunch <<- EOM
+	#!/data/data/com.termux/files/usr/bin/bash
+	if [ -d \$HOME/Tmux-Bunch ]
+	then
+	cd \$HOME/Tmux-Bunch
+	bash tmuxbunch
+else
+echo " Tmux-Bunch not found :("
+fi
+	EOM
+}
+wrapperscript
+
 echo
 echo "DONE"
 sleep 1
-echo "[*] Now you can run tmuxbunch v2.3 --Hax4Us---"
+echo "[*] Now you can run tmuxbunch v2.3 --Hax4Us--- \033[0m"
+
