@@ -58,6 +58,7 @@ fi
 	EOM
 }
 wrapperscript
+chmod +x $PREFIX/bin/tmuxbunch
 
 echo
 echo "DONE"
