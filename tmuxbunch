@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 clear
 unset LD_PRELOAD
-dir=`pwd`
+dir=$HOME/Tmux-Bunch
 if  [ $dir != $HOME/Tmux-Bunch ]
 	then
 		dir=$HOME/Tmux-Bunch
@@ -11,7 +11,7 @@ esit="are you sure ? press ENTER to exit"
 return="ENTER to return to TMUX-BUNCH menu"
 #DIRECTORY="/data/data/com.termux/files/usr/share/figlet"
 TMP="Hax4Us(devil) Tmux-Bunch is a first tool for complete apk modding in TERMUX."
-VERSION="VERSION 2.3"
+VERSION="VERSION 2.4"
 #colors
 cyan='\033[1;36m'
 green='\033[1;32m'
@@ -34,7 +34,7 @@ echo -e "$red               ┈┈┈╱▔▔▔▔▔▔▔▔╲┈┈┈
 
 echo
 echo -e "$green              +_+_+_+_+_+_+_+_+_+_+"
-echo -e "$blue                 Tmux-Bunch v2.3"
+echo -e "$blue                 Tmux-Bunch v2.4"
 echo -e "$green               +_+_+_+_+_+_+_+_+_+_+"
 echo
 echo
