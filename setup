@@ -24,7 +24,7 @@ else
 echo
 echo -e "\033[1;32m Setting up Tmux-Bunch for you ..."
 echo
-chmod +x .tbunch
+chmod +x $dir/.tbunch
 ln -s $dir/.tbunch $PREFIX/bin/tbunch
 chmod 777 $dir/.lib/libld.so
 chmod +x $dir/.apktool
