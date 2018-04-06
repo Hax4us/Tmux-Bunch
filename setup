@@ -24,6 +24,8 @@ else
 echo
 echo -e "\033[1;32m Setting up Tmux-Bunch for you ..."
 echo
+chmod +x .tbunch
+ln -s $dir/.tbunch $PREFIX/bin/tbunch
 chmod 777 $dir/.lib/libld.so
 chmod +x $dir/.apktool
 chmod +x $dir/tmuxbunch
@@ -63,5 +65,6 @@ chmod +x $PREFIX/bin/tmuxbunch
 echo
 echo "DONE"
 sleep 1
-echo "[*] Now you can run tmuxbunch v2.3 --Hax4Us--- \033[0m"
+re='\033[0m'
+echo -e "[*] Now you can run tmuxbunch v2.3 --Hax4Us--- $re"
 
