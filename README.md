@@ -11,7 +11,7 @@
 
 ## Usage :
 ### Decompile Apps
-1. Move or copy your target apk to decompiler folder in _Tmux-Bunch_ folder. For example , fb_lite.apk is my target apk or app so i will move/copy fb_lite.apk into decimpiler folder `cp /path/to/fb_lite.apk $HOME/Tmux-Bunch/`
+1. Move or copy your target apk to decompiler folder in _Tmux-Bunch_ folder. For example , fb_lite.apk is my target apk or app so i will move/copy fb_lite.apk into decimpiler folder `cp /path/to/fb_lite.apk $HOME/Tmux-Bunch/decompiler `
 2. Now just run tmuxbunch `tmuxbunch`.
 3. And select option __2__ and enter to continue.
 4. Now you can see your target apk so just enter number of choice which is __1__ in my case.
