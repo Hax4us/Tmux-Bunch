@@ -66,5 +66,5 @@ echo
 echo "DONE"
 sleep 1
 re='\033[0m'
-echo -e "[*] Now you can run tmuxbunch v2.3 --Hax4Us--- $re"
+echo -e "[*] Now you can run tmuxbunch v2.4 --Hax4Us--- $re"
 
