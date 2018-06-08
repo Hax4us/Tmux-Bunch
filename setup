@@ -26,11 +26,9 @@ echo -e "\033[1;32m Setting up Tmux-Bunch for you ..."
 echo
 chmod +x $dir/.tbunch
 ln -sf $dir/.tbunch $PREFIX/bin/tbunch
-chmod 777 $dir/.lib/libld.so
 chmod +x $dir/.apktool
 chmod +x $dir/tmuxbunch
 chmod +x $dir/.signapk
-chmod 777 $dir/.bunch/openjdk/bin/java
 if [ ! -d $dir/embout ]
 	then
 mkdir $dir/embout
@@ -59,6 +57,48 @@ echo " Tmux-Bunch not found :("
 fi
 	EOM
 }
+
+###############
+# Get Openjdk #
+###############
+
+getjava() {
+	if [ $(getprop ro.product.cpu.abi) = arm64-v8a ]; then
+		ARCH=aarch64
+		FILE=openjdk-9-jre-headless_9.2017.8.20_${ARCH}.deb
+		URL="https://termux.xeffyr.ml/built/${FILE}"
+	elif [ $(getprop ro.product.cpu.abi) = armeabi -o $(getprop ro.product.cpu.abi) = armeabi-v7a ]
+		then
+			ARCH=arm
+			FILE=openjdk-9-jre-headless_9.2017.8.20_${ARCH}.deb
+			URL="https://termux.xeffyr.ml/built/${FILE}"
+		else
+			printf "\033[1;31m Unknown Arch"
+			exit 1
+			fi
+
+	printf "\033[1;32m Downloading Java ...\n"
+	printf "Please wait ..."
+
+	curl --progress-bar -L --fail --retry 4 -O "$URL"
+}
+
+#################
+# Install Java  #
+#################
+
+installjava() {
+	DEPENDS="freetype libpng ca-certificates-java"
+	apt install ${DEPENDS} -y
+	dpkg -i ${FILE}
+	rm ${FILE}
+}
+if [ ! -f $PREFIX/bin/java ];
+	then
+getjava
+installjava
+fi
+
 wrapperscript
 chmod +x $PREFIX/bin/tmuxbunch
 
@@ -66,5 +106,5 @@ echo
 echo "DONE"
 sleep 1
 re='\033[0m'
-echo -e "[*] Now you can run tmuxbunch v2.4 --Hax4Us--- $re"
+echo -e "[*] Now you can run tmuxbunch v2.5 --Hax4Us--- $re"
 

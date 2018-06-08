@@ -10,8 +10,8 @@ subs="which file ? Enter number of choice or 'x' to exit"
 esit="are you sure ? press ENTER to exit"
 return="ENTER to return to TMUX-BUNCH menu"
 #DIRECTORY="/data/data/com.termux/files/usr/share/figlet"
-TMP="Hax4Us(devil) Tmux-Bunch is a first tool for complete apk modding in TERMUX."
-VERSION="VERSION 2.4"
+TMP="Tmux-Bunch is a first tool for complete apk modding in TERMUX."
+VERSION="VERSION 2.5"
 #colors
 cyan='\033[1;36m'
 green='\033[1;32m'
@@ -34,36 +34,36 @@ echo -e "$red               ┈┈┈╱▔▔▔▔▔▔▔▔╲┈┈┈
 
 echo
 echo -e "$green              +_+_+_+_+_+_+_+_+_+_+"
-echo -e "$blue                 Tmux-Bunch v2.4"
+echo -e "$blue                 Tmux-Bunch v2.5"
 echo -e "$green               +_+_+_+_+_+_+_+_+_+_+"
 echo
 echo
 echo -e "$purple ENTER to continue"
 read garbage
-echo -e "$cyan $TMP"
+#echo -e "$cyan $TMP"
 echo
-echo " $VERSION"
+#echo " $VERSION"
 echo
 echo -e "$red   -----Hax4Us---Lokesh---Don't--CopY----"
 echo
-echo -e "$red WARNING :- Don't Try To Reupload , Modify , Or Resell Otherwise I Will Report You"
+#echo -e "$red WARNING :- Don't Try To Reupload , Modify , Or Resell Otherwise I Will Report You"
+#echo
+#echo -e "$green You Can Reuse Or Give My Tool To Anyone or users But You Will Have To Take Permission From Me"
+#echo
+echo "   ------------LICENSE--INCLUDED----------"
 echo
-echo -e "$green You Can Reuse Or Give My Tool To Anyone or users But You Will Have To Take Permission From Me"
+echo -e "$yellow       ~~~~~~~~~TMUX---BUNCH~~~~~~~~~"
 echo
-echo " --------------LICENSE--INCLUDED------------"
+echo -e "$blue                APK MODDING          "
+echo "----------------------------------------"
+#echo
 echo
-echo -e "$yellow         ~~~~~~~~~TMUX---BUNCH~~~~~~~~~"
-echo
-echo -e "$blue                 APK MODDING          "
-echo "---------------------------------------------"
-echo
-echo
-echo -e "$red---------------------Lokesh------------------"
-echo "---------------------------------------------"
+#echo -e "$red---------------------Lokesh------------------"
+#echo "------------------------------------------"
 echo -e "$cyan $TMP"
 echo
 echo " $VERSION"
-echo "---------------------------------------------"
+echo "-------------------------------------------"
 echo
 echo -e "$green Place apps in 'decompiler' folder."
 echo
