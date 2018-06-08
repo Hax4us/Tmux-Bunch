@@ -1,6 +1,6 @@
 # Tmux-Bunch
 
-![logo](../master/docs/images/IMG_20180304_101729_188.JPG)
+![logo](../master/docs/images/IMG_20180608_183511_837.jpg)
 
 ### _Steps For Installation_
 1. Goto home directory `cd $HOME`
@@ -48,31 +48,25 @@
 5. Then wait 2-5 minutes while binding process.
 6. Now you can pick your final binded apk from __embout__ folder.
 
-#### _Note_ :- _Some apps cant be binded because of some reasons and some tested apps are Ccleaner, Terminal Emulator, Google Launcher, Fblite (Maybe only in aarch64), mini militia modded version etc :)
-#### TMUX-BUNCH v2.3 now replaced with Tmux-Bunch v2.4
+#### _Note_ :- Some apps cant be binded because of some reasons and some tested apps are Ccleaner, Terminal Emulator, Google Launcher, Fblite (Maybe only in aarch64), mini militia modded version etc :)
+#### TMUX-BUNCH v2.4 now replaced with Tmux-Bunch v2.5
 Using this ....You can play with apks source codes and also you can bind payloads with any apk.
 
+#### Changes in v2.5
+1. Add oreo support 
 #### Changes in v2.4
 1. Added new shortcuts to quickly play around with tmuxbunch
 
 #### Changes in v2.3
-
- 1.Add persistence backdoor script
-
- 2.Autochecking for binder folder if not exist so tool will create 
+1. Add persistence backdoor script
+2. Autochecking for binder folder if not exist so tool will create 
 
 #### Changes in v2.2
-
- 1.Fix ld.so error
-
- 2.Update Apktool from 2.2.0 to 2.2.2
+1. Fix ld.so error
+2. Update Apktool from 2.2.0 to 2.2.2
 
 #### Changes in v2.1
-
- 1.Improve stability.
-
- 2 Fixed some errors regarding apktool and signapk.
-
- 3.Add new folder "embout"
-
- 4.No need to sign your apk.
+1. Improve stability.
+2. Fixed some errors regarding apktool and signapk.
+3. Add new folder "embout"
+4. No need to sign your apk.

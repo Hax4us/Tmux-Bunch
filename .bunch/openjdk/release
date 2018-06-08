@@ -1,6 +1,0 @@
-JAVA_VERSION="1.7.0"
-OS_NAME="Linux"
-OS_VERSION="2.6"
-OS_ARCH="arm"
-SOURCE=" .:7d45f621855a corba:f3d39b942095 deploy:480f5efee50a hotspot:0c7d7c067c46 hotspot/make/closed:037cf3213c83 hotspot/src/closed:09c539e02aa7 hotspot/test/closed:38f1b3e4d895 install:15846082f1ab jaxp:999eb9cbf840 jaxws:4d068ffb0b54 jdk:3778e2621fc9 jdk/make/closed:91dee7383855 jdk/src/closed:017b5cd1e0c1 jdk/test/closed:0fe9258a6fa8 langtools:059a87205fda pubs:4a7299c0b757 sponsors:5341648c3dc4"
-BUILD_TYPE=commercial
