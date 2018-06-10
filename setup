@@ -7,20 +7,25 @@ else
 	exit
 	fi
 ln -s $dir/.apktool $PREFIX/bin/apktool
-if [ -f $PREFIX/bin/curl ] ; then
-curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
-else
-	apt install curl -y
-curl -LO https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb
+if [ ! -f $PREFIX/bin/axel ] ; then
+	apt install axel -y
 fi
-if [ -d $HOME/metasploit-framework ]
+####################
+# Check Metasploit #
+####################
+
+if [ ! -d $HOME/metasploit-framework ]
 	then
-rm $HOME/metasploit-framework/lib/msf/core/payload/apk.rb
-mv $dir/apk.rb $HOME/metasploit-framework/lib/msf/core/payload/
-else
 	echo -e "\033[1;31m Metasploit cant be found please install metasploit from my official script \033[0m"
 	exit
 	fi
+###############
+## Get apk.rb #
+###############
+
+APK="$HOME/metasploit-framework/lib/msf/core/payload/apk.rb"
+[ -f $APK ] && rm $APK
+axel https://raw.githubusercontent.com/Hax4us/Metasploit_termux/master/apk.rb -o $APK
 echo
 echo -e "\033[1;32m Setting up Tmux-Bunch for you ..."
 echo
@@ -80,7 +85,7 @@ getjava() {
 	printf "\033[1;32m Downloading Java ...\n"
 	printf "Please wait ..."
 
-	curl --progress-bar -L --fail --retry 4 -O "$URL"
+	axel --alternate "$URL"
 }
 
 #################
