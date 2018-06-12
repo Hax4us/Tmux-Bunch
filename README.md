@@ -3,11 +3,23 @@
 ![logo](../master/docs/images/IMG_20180608_183511_837.jpg)
 
 ### _Steps For Installation_
+#### There are two variants available , one for Android < 8.0 and one for Android = 8.0 (OREO) users So follow appropriate instructions on the basis of your Android Version
+##### For Android < 8.0 (OREO)
 1. Goto home directory `cd $HOME`
-2. Clone the tool `git clone https://github.com/Hax4us/Tmux-Bunch.git`
-3. Enter into _Tmux-Bunch_ folder `cd Tmux-Bunch`
-4. Run setup script `bash setup`
-5. Now you can run tmuxbunch from any directory by the command `tmuxbunch`
+2. Install __axel__ `apt install axel`
+3. Download Tar file `axel `
+4. Extract `tar -xf Tmux-Bunch-2.6.tar.gz`
+5. Enter into _Tmux-Bunch_ folder `cd Tmux-Bunch`
+6. Run setup script `bash setup`
+7. Now you can run tmuxbunch from any directory by the command `tmuxbunch`
+##### For Android = 8.0 (OREO)
+1. Goto hone directory `cd $HOME`
+2. Install __axel__ `apt install axel`
+3. Download Tar file `axel `
+4. Extract `tar -xf Tmux-Bunch-2.6-oreo.tar.gz`
+5. Enter into _Tmux-Bunch_ `cd Tmux-Bunch `
+6. Run Setup script `bash setup`
+7. Now you can run tmuxbunch from any directory by the command `tmuxbunch`
 
 ## Usage :
 ## [ New List of shortcuts ]
@@ -52,6 +64,9 @@
 #### TMUX-BUNCH v2.4 now replaced with Tmux-Bunch v2.5
 Using this ....You can play with apks source codes and also you can bind payloads with any apk.
 
+#### Changes in v2.6
+1. Use termux aapt 
+2. Separate Two Variation For Oreo & below oreo users 
 #### Changes in v2.5
 1. Add oreo support 
 #### Changes in v2.4
