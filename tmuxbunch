@@ -11,7 +11,7 @@ esit="are you sure ? press ENTER to exit"
 return="ENTER to return to TMUX-BUNCH menu"
 #DIRECTORY="/data/data/com.termux/files/usr/share/figlet"
 TMP="Tmux-Bunch is a first tool for complete apk modding in TERMUX."
-VERSION="VERSION 2.6"
+VERSION="v2.6"
 #colors
 cyan='\033[1;36m'
 green='\033[1;32m'
@@ -34,7 +34,7 @@ echo -e "$red               ┈┈┈╱▔▔▔▔▔▔▔▔╲┈┈┈
 
 echo
 echo -e "$green              +_+_+_+_+_+_+_+_+_+_+"
-echo -e "$blue                 Tmux-Bunch v2.6"
+echo -e "$blue                 Tmux-Bunch $VERSION"
 echo -e "$green               +_+_+_+_+_+_+_+_+_+_+"
 echo
 echo
@@ -300,7 +300,7 @@ cd $HOME/metasploit-framework
 
 echo -e "$green signing apk ......."
 mv $dir/unsign/output.apk $dir/unsign/$output12.apk
-. $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$output12.apk $dir/embout/$output12.apk
+sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$output12.apk $dir/embout/$output12.apk
 rm $dir/unsign/$output12.apk
 fi
 echo
