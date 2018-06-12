@@ -6,7 +6,7 @@ else
 	echo -e "\033[1;31m You'd cloned in wrong directory please again clone in home directory \033[0m"
 	exit
 	fi
-ln -s $dir/.apktool $PREFIX/bin/apktool
+ln -sf $dir/.apktool $PREFIX/bin/apktool
 if [ ! -f $PREFIX/bin/axel ] ; then
 	apt install axel -y
 fi
@@ -71,7 +71,7 @@ getjava() {
 	if [ $(getprop ro.product.cpu.abi) = arm64-v8a ]; then
 		ARCH=aarch64
 		FILE=openjdk-9-jre-headless_9.2017.8.20_${ARCH}.deb
-		URL="https://termux.xeffyr.ml/built/${FILE}"
+		URL="https://termux.xeffyr.ml/dists/extra/main/binary-${ARCH}/${FILE}"
 	elif [ $(getprop ro.product.cpu.abi) = armeabi -o $(getprop ro.product.cpu.abi) = armeabi-v7a ]
 		then
 			ARCH=arm
@@ -111,5 +111,5 @@ echo
 echo "DONE"
 sleep 1
 re='\033[0m'
-echo -e "[*] Now you can run tmuxbunch v2.5 --Hax4Us--- $re"
+echo -e "[*] Now you can run tmuxbunch v2.6 --Hax4Us--- $re"
 
