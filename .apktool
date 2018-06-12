@@ -1,4 +1,2 @@
 #!/data/data/com.termux/files/usr/bin/bash
-unset LD_PRELOAD
-cd $HOME/Tmux-Bunch/.bunch
 exec java -Xmx1024m -Djava.io.tmpdir=$HOME/Tmux-Bunch -jar $HOME/Tmux-Bunch/.bunch/apktool-2.2.2.jar -p $HOME/Tmux-Bunch "$@"
