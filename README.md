@@ -7,7 +7,7 @@
 ##### For Android < 8.0 (OREO)
 1. Goto home directory `cd $HOME`
 2. Install __axel__ `apt install axel`
-3. Download Tar file `axel `
+3. Download Tar file `axel https://github.com/Hax4us/Tmux-Bunch/releases/download/2.6/Tmux-Bunch-2.6.tar.gz`
 4. Extract `tar -xf Tmux-Bunch-2.6.tar.gz`
 5. Enter into _Tmux-Bunch_ folder `cd Tmux-Bunch`
 6. Run setup script `bash setup`
@@ -15,7 +15,7 @@
 ##### For Android = 8.0 (OREO)
 1. Goto hone directory `cd $HOME`
 2. Install __axel__ `apt install axel`
-3. Download Tar file `axel `
+3. Download Tar file `axel https://github.com/Hax4us/Tmux-Bunch/releases/download/2.6_Oreo/Tmux-Bunch-2.6-oreo.tar.gz`
 4. Extract `tar -xf Tmux-Bunch-2.6-oreo.tar.gz`
 5. Enter into _Tmux-Bunch_ `cd Tmux-Bunch `
 6. Run Setup script `bash setup`
