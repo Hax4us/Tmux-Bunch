@@ -76,7 +76,7 @@ getjava() {
 		then
 			ARCH=arm
 			FILE=openjdk-9-jre-headless_9.2017.8.20_${ARCH}.deb
-			URL="https://termux.xeffyr.ml/built/${FILE}"
+			URL="https://termux.xeffyr.ml/dists/extra/main/binary-${ARCH}/${FILE}"
 		else
 			printf "\033[1;31m Unknown Arch"
 			exit 1
