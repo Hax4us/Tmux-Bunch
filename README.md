@@ -1,22 +1,22 @@
 # Tmux-Bunch
 
-![logo](../master/docs/images/IMG_20180608_183511_837.jpg)
+![logo](../master/docs/images/IMG_20180628_174349_826.jpg)
 
 ### _Steps For Installation_
 #### There are two variants available , one for Android < 8.0 and one for Android = 8.0 (OREO) users So follow appropriate instructions on the basis of your Android Version
 ##### For Android < 8.0 (OREO)
 1. Goto home directory `cd $HOME`
 2. Install __axel__ `apt install axel`
-3. Download Tar file `axel https://github.com/Hax4us/Tmux-Bunch/releases/download/2.6/Tmux-Bunch-2.6.tar.gz`
-4. Extract `tar -xf Tmux-Bunch-2.6.tar.gz`
+3. Download Tar file `axel https://github.com/Hax4us/Tmux-Bunch/releases/download/v2.7/Tmux-Bunch-2.7.tar.gz`
+4. Extract `tar -xf Tmux-Bunch-2.7.tar.gz`
 5. Enter into _Tmux-Bunch_ folder `cd Tmux-Bunch`
 6. Run setup script `bash setup`
 7. Now you can run tmuxbunch from any directory by the command `tmuxbunch`
 ##### For Android = 8.0 (OREO)
 1. Goto hone directory `cd $HOME`
 2. Install __axel__ `apt install axel`
-3. Download Tar file `axel https://github.com/Hax4us/Tmux-Bunch/releases/download/2.6_Oreo/Tmux-Bunch-2.6-oreo.tar.gz`
-4. Extract `tar -xf Tmux-Bunch-2.6-oreo.tar.gz`
+3. Download Tar file `axel https://github.com/Hax4us/Tmux-Bunch/releases/download/v2.7/Tmux-Bunch-2.7-oreo.tar.gz`
+4. Extract `tar -xf Tmux-Bunch-2.7-oreo.tar.gz`
 5. Enter into _Tmux-Bunch_ `cd Tmux-Bunch `
 6. Run Setup script `bash setup`
 7. Now you can run tmuxbunch from any directory by the command `tmuxbunch`
@@ -64,6 +64,8 @@
 
 Using this ....You can play with apks source codes and also you can bind payloads with any apk.
 
+#### Changes in v2.7
+1. Use termux apksigner 
 #### Changes in v2.6
 1. Use termux aapt 
 2. Separate Two Variation For Oreo & below oreo users 
