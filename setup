@@ -7,9 +7,7 @@ else
 	exit
 	fi
 ln -sf $dir/.apktool $PREFIX/bin/apktool
-if [ ! -f $PREFIX/bin/axel ] ; then
-	apt install axel -y
-fi
+apt install axel aapt apksigner -y
 ####################
 # Check Metasploit #
 ####################
@@ -33,7 +31,7 @@ chmod +x $dir/.tbunch
 ln -sf $dir/.tbunch $PREFIX/bin/tbunch
 chmod +x $dir/.apktool
 chmod +x $dir/tmuxbunch
-chmod +x $dir/.signapk
+#chmod +x $dir/.signapk
 if [ ! -d $dir/embout ]
 	then
 mkdir $dir/embout
@@ -111,5 +109,5 @@ echo
 echo "DONE"
 sleep 1
 re='\033[0m'
-echo -e "[*] Now you can run tmuxbunch v2.6 --Hax4Us--- $re"
+echo -e "[*] Now you can run tmuxbunch v2.7-Oreo --Hax4Us--- $re"
 

