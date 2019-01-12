@@ -14,7 +14,7 @@ apt install axel aapt apksigner -y
 
 if [ ! -d $HOME/metasploit-framework ]
 	then
-	echo -e "\033[1;31m Metasploit cant be found please install metasploit from my official script \033[0m"
+	echo -e "\033[1;31m Metasploit can't be found please install metasploit from my official script \033[0m"
 	exit
 	fi
 ###############
