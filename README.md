@@ -1,4 +1,4 @@
-# Tmux-Bunch
+# Tmux-Bunch ( Not Maintained now )
 
 ![logo](../master/docs/images/IMG_20180628_174349_826.jpg)
 
