@@ -46,7 +46,7 @@
 ### Recompile Apps
 1. By taking same example as above now i have decompiled source in _recompiler_ folder i.e fb_lite.apk (remember fb_lite.apk is not apk file , it is a folder here) So just play with source and after playing you have to rerun tmuxbunch `tmuxbunch`
 2. Select option __3__ and you can see now folder name which is fb_lite.apk in my case so i will enter __1__ and boom :).
-3. App will be reompiled to __unsign__ folder but wait work is not completed yet ...
+3. App will be recompiled to __unsign__ folder but wait work is not completed yet ...
 4. Now you will have to sign your target apk to avoid _package parse error_ while installing.
 
 ### Sign Apk
