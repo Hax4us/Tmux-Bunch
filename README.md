@@ -1,5 +1,7 @@
 # Tmux-Bunch ( Not Maintained now )
 
+## Try Apkmod instead https://GitHub.com/Hax4Us/Apkmod
+
 ![logo](../master/docs/images/IMG_20180628_174349_826.jpg)
 
 ### _Steps For Installation_
